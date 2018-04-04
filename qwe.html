@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EEW</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+		body{
+			background:#fd0;
+		}
+		#cloclk{
+	width: 300px;
+    height: 300px;
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%); 
+	}
+	#kd-min li{
+		width:  10px;
+		height: 2px;
+		background-color: #fff;
+	    position: absolute;
+        top: 50%;
+        left:50%;
+
+		}
+</style>
+</head>
+<body>
+	<div id="cloclk">
+		<ul id="kd-min">
+			<li style=""></li>
+		</ul>
+		<ul id="kd-hour"></ul> 
+		<ul id="number"></ul>
+		<ul id="pointer">
+			<li id="sec"></li>
+			<li id="min"></li>
+			<li id="hour"></li>
+			<li id="circle"></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		function id(a){
+			return document.getElementById(a);
+		}
+		(function () {
+			var hh= "";
+			for(var i=0;i<60;i++)
+				hh+="<<li></li>";
+			id('kd-min').innerHTHL= hh;
+		})();
+	</script>
+</body>
+</html>

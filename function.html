@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//程序有两种退出 一种异常退出 一种return 正常退出
+	//bbb(1,2,3);
+/*	aaa(); //aaa is not a function*/
+		var aaa =function (){
+			console.log("aaa");
+		}
+		function bbb(a,b){
+			console.log("bbb");
+		}
+
+		var Actor=function(name){
+			this.name=name;//this在程序中表示自己 
+			this.show =function () {
+				console.log("我是"+this.name );
+			}
+		}
+
+		var liudehua = new Actor('刘德华');
+		liudehua.show();
+
+		var liangchaowei =new Actor("梁朝伟");
+		liangchaowei.show();
+
+		var name ="叶"
+
+		var ss =liangchaowei.show.bind(window);//让this指向参数对象
+		//  方法。bind(this指向的对象) 绑定  /*bind的意思绑定*/
+
+
+		function max(a,b){
+			return a>b? a:b;
+		}
+		function min(){
+		 var arr=Array.prototype.slice.apply(arguments,[0]);
+		console.log(arr);
+			// console.log(arguments[0],arguments[1]);
+		}
+
+	</script>
+</body>
+</html>
+
+
+

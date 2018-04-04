@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*让canvas居中与页面，阴影效果*/
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#cvs{
+			box-shadow: 5px 5px 15px 5px #333,-1px -1px 5px 3px #333;
+			position: absolute;
+			top: 50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+		}
+	</style>
+</head>
+<body>
+	<canvas id ="cvs" width="450" height="450">
+		
+	</canvas>
+	<script type="text/javascript">
+	var cvs =document.getElementById("cvs");
+		var ctx = cvs.getContext("2d");
+		
+	function drawPlaint(argument) {
+		ctx.strokeStyle="#888"
+		for(var i=0;i<15;i++){
+			var x1=15,x2=435,y=15+(i*30);
+		ctx.moveTo(x1,y);
+		ctx.lineTo(x2,y);
+		ctx.stroke();
+		ctx.moveTo(y,x1);
+		ctx.lineTo(y,x2);
+		ctx.stroke();
+		}
+	}
+		drawPlaint();
+
+		function drawZi(x,y,black) {
+			ctx.beginPath();
+			ctx.arc(x,y,20,0,2*Math.PI);
+			ctx.closePath();
+			// var crg=ctx.createRadialGradient(100,150,20,100,150,0);
+			// crg.addColorStop(0,'red');
+			// crg.addColorStop(1,'green');
+			if(black){
+					ctx.fillStyle="#333";
+				}else{
+						ctx.fillStyle="#eee";
+						ctx.lineWidth=3;
+						ctx.strokeStyle="#333";
+						ctx.stroke();
+				}
+		
+			ctx.fill();
+		}
+		// drawZi(false);
+
+		cvs.onclick=dunction(e){
+			var x=offsetX;
+			var y=offsetY;
+			draWzi(x,y);
+
+		}
+</body>
+</html>

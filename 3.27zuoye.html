@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		Date.prototype.toString=function () {
+		 return this.getFullYear()+"-"+this.getMonth()+"-"+this.getDate()+"   "+this.getHours()+":"+this.getMinutes()+":"+this.getSeconds();
+				}
+		var sj=new Date();
+		alert(sj);
+		var x=new Date();
+		myVar=x.toString();
+
+	</script>
+</body>
+</html>

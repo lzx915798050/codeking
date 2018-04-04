@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<table id="tbl"></table>
+	<script>
+	var users=[
+	{name:"张三",age:18,sex:'男'},
+	{name:"张卫",age:28,sex:'男'},
+	{name:"张小",age:32,sex:'女'},
+	{name:"张小",age:52,sex:'女'},
+	{name:"张小",age:32,sex:'男'},
+	{name:"张欧尼",age:75,sex:'男'},
+	];
+	//将数组进行送代==》回调处理每一次送代的逻辑
+	//三个参数：当前的数组元素，当前元素的索引，数组本身
+	//forEach ,filter ,some,every
+	var str =users.map(function (item,index,arr){
+		return`
+		<tr>
+		<td>${item.name}</td>
+		<td>${item.age}</td>
+		<td>${item.sex}</td>
+		</tr>
+		`;
+	});
+
+	str=str.reduce(function(qian,dangqian,index,shuzu){
+		// debugger;
+		return qian+dangqian;
+	});
+	// console.log(str);
+	var tbl=document.getElementById('tbl');
+	tbl.innerHTML= str;
+	var result=[1,2,3,4,5,6,7,8].filter(function (item,indx,arr){
+		return item%2==0;
+	});
+	console.log(result);
+	var arr2=[];
+	// 填充100个随机数，取值范围从12-97，整数
+	for(var i=0;i<100;i++){
+		arr2[i]=Math.floor(Math.random() * 86)+19;//0-1不包含1
+	}
+	/**
+	如果a大则返回正数10000
+	如果b大则返回负数
+	如果a,b相等则返回0；
+	**/
+	// arr2.sort(function(a,b,c){
+	// 	if(a>b){
+	// 	return 8979;
+	// }else if(a<b){
+	// 	return -328456;
+	// }else{
+	// 	return 0;
+	// }
+	// });
+	// arr2.sort(function(a,b){//a=23,b=30
+	// 	return b-a;
+	// // 	if(a>b){
+	// // 	return 8979;
+	// // }else if(a<b){
+	// // 	return -328456;
+	// // }else{
+	// // 	return 0;
+	// // }
+	// });
+
+	users.sort(function(a,b){//a,b=>对象
+
+		var r = b.age-a.age;
+		if(r==0){
+			return(b.sex.charCodeAt(0)-a.sex.charCodeAt(0));
+		}
+		return r;
+	})
+
+	</script>
+</body>
+</html>

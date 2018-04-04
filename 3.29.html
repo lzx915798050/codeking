@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function add(a,b){
+		a+=20;
+		alert(a+b);
+	}
+	add(100,88);//方法参数的赋值就像变量的赋值一样
+	var e=200;
+	function suibian(a,b,cd){
+		function dapaidang(aaa){
+			return aaa;
+		}
+		function haha(cd){
+			return cd;
+		}
+		haha(dapaidang(cd))(a,b);
+		
+	}
+	suibian(87,13,add);
+
+	</script>
+</body>
+</html>

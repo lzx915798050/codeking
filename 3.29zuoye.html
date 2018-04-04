@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+
+	// function zhuangxiu() {
+	// 	function shuidian(a) {
+	// 		alert("给水电工人钥匙");
+	// 		return a;
+	// 		// body...
+	// 	}
+	// 	function nigong(b) {
+	// 		alert("给泥工钥匙");
+	// 		return b;
+	// 		// body...
+	// 	}
+	// 	function mugong(c) {
+	// 		alert("给木工钥匙");
+	// 		return c;
+	// 		// body...
+	// 	}
+	// 	function youqigong(d) {
+	// 		alert("给油漆工钥匙");
+	// 		return d;
+	// 		// body...
+	// 	}
+	// 	shuidian(nigong(mugong(youqigong)));
+	// }
+	// zhuangxiu();
+
+
+	function House() {
+		this.zhuangxiu=function (visitor) {
+			visitor.doThing("钥匙");
+	
+		}
+		
+	}
+	function Visitor(type) {
+		this.type =type;
+		this.doThing =function (a) {
+			console.log(`
+				我是${this.type}工人，我拿到了${a}
+				我进行装修
+				`);
+			// body...
+		}
+		// body...
+	}
+	var house =new House();
+	house.zhuangxiu(new Visitor("水电工"));
+	house.zhuangxiu(new Visitor("木工"));
+	house.zhuangxiu(new Visitor("油漆工"));
+	house.zhuangxiu(new Visitor("泥工"));
+</script>
+</body>
+</html>

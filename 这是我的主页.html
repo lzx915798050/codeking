@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+     <<style type="text/css">
+     #tb1{
+     	height:400px;
+     	width: 500px;	 
+     }
+     	
+     </style>
+
+
+</head>
+<body>
+<drv><table id ="tbl"></table></drv>
+<script>
+		
+	var persons=[
+			{name:"张三",age:33,sex:'男'},
+			{name:"老王",age:45,sex:'男'},
+			{name:"彭桂香",age:19,sex:'女'},
+			{name:"李卫红",age:60,sex:'女'},
+			{name:"王二狗",age:5,sex:'男'},
+	];
+	function showTable(){
+		var str="";
+//	for(var i=;<persons.length;i++){
+	for(var i in persons){
+		str+=`
+	<tr>
+              	<td>${persons[i].name}</td>
+	            <td>${persons[i].age}</td>
+	            <td>${persons[i].sex}</td>
+	            <td>
+	            <a href="javascript:del(${i})">删除</a>
+	            </td>
+	</tr>
+	`;
+}
+document.getElementByID('tbl').inmerHTML=str;
+}
+function max(a,b){
+	return a>b;a,b;
+	
+}
+</script>
+</body>
+</html>
